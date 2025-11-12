@@ -1,0 +1,92 @@
+[
+  { 
+    "_id": "A101", 
+    "title": "Propulsion Assignment", 
+    "course": "RS101",
+    "description": "Study rocket propulsion fundamentals and design principles",
+    "points": 100,
+    "dueDate": "2024-05-13T23:59",
+    "availableFrom": "2024-05-06T12:00",
+    "availableUntil": "2024-05-20T23:59"
+  },
+  { 
+    "_id": "A102", 
+    "title": "Combustion Analysis", 
+    "course": "RS101",
+    "description": "Analyze combustion processes in rocket engines",
+    "points": 100,
+    "dueDate": "2024-05-20T23:59",
+    "availableFrom": "2024-05-13T12:00",
+    "availableUntil": "2024-05-27T23:59"
+  },
+  { 
+    "_id": "A103", 
+    "title": "Nozzle Design Project", 
+    "course": "RS101",
+    "description": "Design and optimize a rocket nozzle",
+    "points": 100,
+    "dueDate": "2024-05-27T23:59",
+    "availableFrom": "2024-05-20T12:00",
+    "availableUntil": "2024-06-03T23:59"
+  },
+  { 
+    "_id": "A201", 
+    "title": "Aerodynamics Quiz", 
+    "course": "RS102",
+    "description": "Quiz on aerodynamic principles",
+    "points": 100,
+    "dueDate": "2024-05-13T23:59",
+    "availableFrom": "2024-05-06T12:00",
+    "availableUntil": "2024-05-20T23:59"
+  },
+  { 
+    "_id": "A202", 
+    "title": "Flow Analysis", 
+    "course": "RS102",
+    "description": "Analyze subsonic and supersonic flow patterns",
+    "points": 100,
+    "dueDate": "2024-05-20T23:59",
+    "availableFrom": "2024-05-13T12:00",
+    "availableUntil": "2024-05-27T23:59"
+  },
+  { 
+    "_id": "A203", 
+    "title": "Heating Analysis", 
+    "course": "RS102",
+    "description": "Study aerodynamic heating effects",
+    "points": 100,
+    "dueDate": "2024-05-27T23:59",
+    "availableFrom": "2024-05-20T12:00",
+    "availableUntil": "2024-06-03T23:59"
+  },
+  { 
+    "_id": "A301", 
+    "title": "Structural Design Task", 
+    "course": "RS103",
+    "description": "Design spacecraft structural components",
+    "points": 100,
+    "dueDate": "2024-05-13T23:59",
+    "availableFrom": "2024-05-06T12:00",
+    "availableUntil": "2024-05-20T23:59"
+  },
+  { 
+    "_id": "A302", 
+    "title": "Orbital Calculations", 
+    "course": "RS103",
+    "description": "Calculate orbital mechanics and trajectories",
+    "points": 100,
+    "dueDate": "2024-05-20T23:59",
+    "availableFrom": "2024-05-13T12:00",
+    "availableUntil": "2024-05-27T23:59"
+  },
+  { 
+    "_id": "A303", 
+    "title": "Systems Engineering Exam", 
+    "course": "RS103",
+    "description": "Comprehensive exam on spacecraft systems",
+    "points": 100,
+    "dueDate": "2024-05-27T23:59",
+    "availableFrom": "2024-05-20T12:00",
+    "availableUntil": "2024-06-03T23:59"
+  }
+]
