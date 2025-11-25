@@ -1,8 +1,8 @@
 import UsersDao from "./dao.js";
+import model from "./model.js";
 let currentUser = null;
 export default function UserRoutes(app) {
-  const dao = UsersDao();
-
+  const dao = UsersDao(model);
   const createUser = async (req, res) => {
     const user = req.body;
     const newUser = await dao.createUser(user);
@@ -19,10 +19,12 @@ export default function UserRoutes(app) {
     const { role } = req.query;
     if (role) {
       const users = await dao.findUsersByRole(role);
+      console.log("Fetched users by role:", users);
       res.json(users);
       return;
     }
     const users = await dao.findAllUsers();
+    console.log("Fetched all users:", users);
     res.json(users);
   };
 

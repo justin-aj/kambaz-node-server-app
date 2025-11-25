@@ -1,27 +1,30 @@
 import { v4 as uuidv4 } from "uuid";
+import model from "./model.js";
 
-export default function ModulesDao(db) {
-  function createModule(module) {
-    const newModule = { ...module, _id: uuidv4() };
-    db.modules = [...db.modules, newModule];
-    return newModule;
+export default function ModulesDao() {
+  async function createModule(courseId, module) {
+    const newModule = { ...module, _id: uuidv4(), course: courseId };
+    const created = await model.create(newModule);
+    return created;
   }
 
-  function findModulesForCourse(courseId) {
-    const { modules } = db;
-    return modules.filter((module) => module.course === courseId);
+  async function findModulesForCourse(courseId) {
+    const modules = await model.find({ course: courseId });
+    console.log("findModulesForCourse: courseId=", courseId, "modules=", modules);
+    return modules;
   }
 
-  function deleteModule(moduleId) {
-    const { modules } = db;
-    db.modules = modules.filter((module) => module._id !== moduleId);
+  async function deleteModule(courseId, moduleId) {
+    const status = await model.deleteOne({ _id: moduleId, course: courseId });
+    return status;
   }
 
-  function updateModule(moduleId, moduleUpdates) {
-    const { modules } = db;
-    const module = modules.find((module) => module._id === moduleId);
-    Object.assign(module, moduleUpdates);
-    return module;
+  async function updateModule(courseId, moduleId, moduleUpdates) {
+    const status = await model.updateOne(
+      { _id: moduleId, course: courseId },
+      { $set: moduleUpdates }
+    );
+    return status;
   }
 
   return {
