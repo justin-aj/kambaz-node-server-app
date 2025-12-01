@@ -7,7 +7,20 @@ export default function UsersDao(db) {
   }
 
   const findUsersByPartialName = (partialName) => {
-    const regex = new RegExp(partialName, "i"); // 'i' makes it case-insensitive
+    const parts = partialName.trim().split(/\s+/);
+    if (parts.length >= 2) {
+      // If two or more words, match first word to firstName and second to lastName (or vice versa)
+      const firstRegex = new RegExp(parts[0], "i");
+      const secondRegex = new RegExp(parts[1], "i");
+      return model.find({
+        $or: [
+          { firstName: { $regex: firstRegex }, lastName: { $regex: secondRegex } },
+          { firstName: { $regex: secondRegex }, lastName: { $regex: firstRegex } },
+        ],
+      });
+    }
+    // Single word: match against firstName or lastName
+    const regex = new RegExp(partialName, "i");
     return model.find({
       $or: [{ firstName: { $regex: regex } }, { lastName: { $regex: regex } }],
     });
